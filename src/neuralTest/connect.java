@@ -1,78 +1,11 @@
 package neuralTest;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.lang.Object;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.ArrayList;
-
-import org.openimaj.audio.AudioFormat;
-import org.openimaj.audio.AudioPlayer;
-import org.openimaj.audio.JavaSoundAudioGrabber;
-import org.openimaj.audio.SampleChunk;
-import org.openimaj.audio.analysis.FourierTransform;
-import org.openimaj.audio.features.MFCC;
-import org.openimaj.audio.processor.FixedSizeSampleAudioProcessor;
-import org.openimaj.video.xuggle.XuggleAudio;
-import org.openimaj.vis.audio.AudioWaveform;
-
-import edu.cmu.sphinx.frontend.Data;
-import edu.cmu.sphinx.frontend.DataProcessor;
-import edu.cmu.sphinx.frontend.FrontEnd;
-import edu.cmu.sphinx.frontend.frequencywarp.MelFrequencyFilterBank;
-import edu.cmu.sphinx.frontend.transform.DiscreteCosineTransform2;
-import edu.cmu.sphinx.frontend.transform.DiscreteFourierTransform;
-import edu.cmu.sphinx.frontend.util.AudioFileDataSource;
 
 public class connect {
 
-	public static void main(String[] args) throws MalformedURLException {
-		//		XuggleAudio xa = new XuggleAudio( new File( "myAudioFile.mp3" ) );
-		//		AudioPlayer.createAudioPlayer( xa ).run();
-		//		
-		//		final AudioWaveform vis = new AudioWaveform( 400, 400 );
-		//		vis.showWindow( "Waveform" );
-		//
-		//		final XuggleAudio xa = new XuggleAudio( 
-		//		    new URL( "http://www.audiocheck.net/download.php?" +
-		//		        "filename=Audio/audiocheck.net_sweep20-20klin.wav" ) );
-		//
-		//		SampleChunk sc = null;
-		//		while( (sc = xa.nextSampleChunk()) != null )
-		//		    vis.setData( sc.getSampleBuffer() );
-		//		
-		//		
-		//		MFCC mfcc = new MFCC( xa );
-		//		
-		//		while( (sc = mfcc.nextSampleChunk()) != null )
-		//		{
-		//			double[][] mfccs = mfcc.getLastCalculatedFeature();
-		//			vis.setData( mfccs[0] );
-		//		}
-		//		
-		//		JavaSoundAudioGrabber jsag = new JavaSoundAudioGrabber( new AudioFormat( 16, 44.1, 1 ) );
-		//		FixedSizeSampleAudioProcessor fssap = new FixedSizeSampleAudioProcessor( jsag, 441*3, 441 );
-
-		AudioFileDataSource audioDataSource = new AudioFileDataSource(3200, null);
-
-		audioDataSource.setAudioFile(new URL("file:///path/to/my.wav", "source");
-
-		final ArrayList<DataProcessor> pipeline = new ArrayList<DataProcessor>();
-
-		pipeline.add(audioSource);
-		pipeline.add(new DiscreteFourierTransform());
-		pipeline.add(new MelFrequencyFilterBank(minFreq, maxFreq, numFilters));
-		pipeline.add(new DiscreteCosineTransform2(numFilters, 12));
-		FrontEnd f = new FrontEnd(pipeline);
-
-		Data mfccs;
-		do {
-			mfccs = f.getData();
-		} 
-		while(mfccs != null) 
-
+	public static void main(String[] args) {
+		double [] in = {1,2,3,4,5,6,7,8,9,10,11,12};
+		System.out.print(MLCal(in));
 
 
 	}
@@ -120,9 +53,8 @@ public class connect {
 							,	0.153321788
 							,	-0.155209497
 							,	-0.183188558}
-
-
 		};
+		
 		double[][] fc2Weight = {
 				{0.368401468
 					,0.411503017
