@@ -81,8 +81,8 @@ public class connect {
 		double fc2Output [] = {0,0};
 		//second layer calculation
 		for(int j = 0; j < 2; j ++) {
-			for(int i = 0 ; i <input.length;i++) {
-				fc2Output[j] = fc2Output[j] + fc2Weight[j][i]*input[i];
+			for(int i = 0 ; i <fc1Output.length;i++) {
+				fc2Output[j] = fc2Output[j] + fc2Weight[j][i]*fc1Output[i];
 			}	
 			fc2Output[j] = fc2Output[j] +fc2Bias[j] ;
 		}
